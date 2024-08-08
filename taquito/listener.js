@@ -130,7 +130,7 @@ const processClaimComplianceProviderResponses = (res, tokenCount) => {
     Console.debug("Decoded CCP response: " + decodedString);
     const jsonArray = JSON.parse(decodedString);
     jsonArray.forEach(item => {
-      Console.debug("Processing VP from CCP: " + item);
+      Console.info("Processing VP from CCP: " + item);
       if (item.verifiableCredential[0]?.issuer?.startsWith("did:web:compliance.lab.gaia-x.eu")) {
         Console.info("Skipping VP due to issuer starts with did:web:compliance.lab.gaia-x.eu.");
       } else {
