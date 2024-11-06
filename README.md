@@ -31,10 +31,17 @@ Run the server locally:
 npm run serve
 ```
 
-
+## Configuration
 ## Tezos Account
 
 You can easily create your own account and change it in the config file.
 
 When originating new contracts, make sure to update the new addresses in [./contractConfig.js](./contractConfig.js).
 
+## Federated catalogue
+Make sure to update the `.env` file with the correct catalogue URL and credentials:
+```angular2html
+keycloak_user_username=<your user name>
+keycloak_user_password=<your password>
+client_secret=<your client secret>
+```

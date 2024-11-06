@@ -11,28 +11,28 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@taquito/taquito": "^13.0.1",
-    "@taquito/tzip12": "^19.2.0",
-    "@taquito/tzip16": "^14.2.0",
-    "@taquito/utils": "^14.2.0",
-    "axios": "^1.0.0",
+    "@taquito/taquito": "^20.1.0",
+    "@taquito/tzip12": "^20.1.0",
+    "@taquito/tzip16": "^20.1.0",
+    "@taquito/utils": "^20.1.0",
+    "axios": "^1.7.7",
     "compose": "^0.1.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.1",
-    "ipfs-http-client": "^54.0.2",
-    "node-fetch": "^3.2.4",
-    "nodemon": "^2.0.16",
-    "ws": "^8.16.0"
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "ipfs-http-client": "^60.0.1",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.7",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
-    "@taqueria/plugin-metadata": "^0.20.2",
-    "@taqueria/plugin-smartpy": "^0.20.2"
+    "@taqueria/plugin-metadata": "^0.64.0",
+    "@taqueria/plugin-smartpy": "^0.64.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uZhW8Rgl/EDC-Blockchain-Listener.git"
+    "url": "git+https://github.com/GAIA-X4PLC-AAD/blockchain-listener.git"
   },
   "keywords": [],
-  "homepage": "https://github.com/uZhW8Rgl/EDC-Blockchain-Listener#readme"
+  "homepage": "https://github.com/GAIA-X4PLC-AAD/blockchain-listener/blob/main/README.md"
 }
