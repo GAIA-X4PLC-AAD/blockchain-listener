@@ -34,8 +34,10 @@ export const sendToCatalogue = async (token) => {
                 await sendRequest();
             } else {
                 let statusCode = error.response ? error.response.status : 'No response';
-                Console.info('Status of FC response: ' + statusCode);
-                Console.error(error);
+                Console.error('Error status of FC response: ' + statusCode);
+                if (error.response && error.response.data) {
+                    Console.error('Response body: ' + JSON.stringify(error.response.data, null, 2));
+                }
             }
         }
     };
