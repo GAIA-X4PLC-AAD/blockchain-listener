@@ -27,7 +27,7 @@ export const sendToCatalogue = async (token) => {
             Console.info('Status of FC response: ' + response.status);
             Console.debug(JSON.stringify(response.data));
         } catch (error) {
-            if (error.response && error.response.status === 401 && attemptRefresh) {
+            if (error.response && (error.response.status === 401 || error.response.status === 403) && attemptRefresh) {
                 Console.info('Access token expired. Refreshing token...');
                 await refreshAccessToken();
                 attemptRefresh = false;
