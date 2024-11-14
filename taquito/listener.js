@@ -130,11 +130,12 @@ const processClaimComplianceProviderResponses = (res, tokenCount) => {
     Console.debug("Decoded CCP response: " + decodedString);
     const jsonArray = JSON.parse(decodedString);
     jsonArray.forEach(item => {
-      Console.debug("Processing VP from CCP: " + item);
+      const vpId = item['@id'] || item.id;
+      Console.debug("Processing VP ID " + vpId + " from CCP: " + item);
       if (item.verifiableCredential[0]?.issuer?.startsWith("did:web:compliance.lab.gaia-x.eu")) {
-        Console.info("Skipping VP due to issuer starts with did:web:compliance.lab.gaia-x.eu.");
+        Console.info("Skipping VP with ID " + vpId + " due to issuer starts with did:web:compliance.lab.gaia-x.eu.");
       } else {
-        Console.info("Sending VP to FC server");
+        Console.info("Sending VP with ID " + vpId + " to FC server.");
         sendToCatalogue(item);
       }
     });

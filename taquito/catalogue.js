@@ -27,15 +27,17 @@ export const sendToCatalogue = async (token) => {
             Console.info('Status of FC response: ' + response.status);
             Console.debug(JSON.stringify(response.data));
         } catch (error) {
-            if (error.response && error.response.status === 401 && attemptRefresh) {
+            if (error.response && (error.response.status === 401 || error.response.status === 403) && attemptRefresh) {
                 Console.info('Access token expired. Refreshing token...');
                 await refreshAccessToken();
                 attemptRefresh = false;
                 await sendRequest();
             } else {
                 let statusCode = error.response ? error.response.status : 'No response';
-                Console.info('Status of FC response: ' + statusCode);
-                Console.error(error);
+                Console.error('Error status of FC response: ' + statusCode);
+                if (error.response && error.response.data) {
+                    Console.error('Response body: ' + JSON.stringify(error.response.data, null, 2));
+                }
             }
         }
     };
